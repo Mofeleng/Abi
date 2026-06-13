@@ -11,8 +11,16 @@ import Link from "next/link";
 import { AuthCardSeparator } from "../components/auth-card-separator";
 import { SocialSignOnButtons } from "../components/social-sign-on-buttons";
 import { signInDto, SignInDto } from "../../dtos/sign-in-dto";
+import { useState } from "react";
+import { LoaderIcon } from "lucide-react";
+import { authClient } from "@/lib/auth-client";
+import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 
 export function SignInView() {
+    const [ isLoading, setIsLoading ] = useState<boolean>(false);
+    const router = useRouter();
+
     const form = useForm<SignInDto>({
         resolver: zodResolver(signInDto),
         defaultValues: {
@@ -21,8 +29,25 @@ export function SignInView() {
         }
     });
 
-    const onSubmit = (values: SignInDto) => {
-
+    const onSubmit = async ({ email, password }: SignInDto) => {
+        await authClient.signIn.email({
+            email,
+            password,
+            callbackURL: "/dashboard"
+        }, {
+            onRequest: () => {
+                setIsLoading(true);
+            },
+            onSuccess: () => {
+                router.push("/dashboard")
+                setIsLoading(false);
+            },
+            onError: (err) => {
+                setIsLoading(false);
+                toast.error(err.error.message);
+            },
+            
+        })
     }
 
     return (
@@ -82,9 +107,19 @@ export function SignInView() {
 
                         <Button
                             type="submit"
-                            className="w-full"
+                            className="w-full flex flex-row gap-1 items-center"
+                            disabled={isLoading}
                         >
-                            Sign in
+                            {
+                                isLoading ? (
+                                    <>
+                                        <LoaderIcon className="animate-spin" />
+                                        Signing you in
+                                    </>
+                                ) : (
+                                    <>Sign in</>
+                                )
+                            }
                         </Button>
                         <div className="w-full text-center">
                             <span> New to Abi? <Link href="/auth/sign-up" className="hover:text-primary hover:underline">Sign up</Link></span>
