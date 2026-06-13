@@ -10,8 +10,16 @@ import { Controller, useForm } from "react-hook-form";
 import Link from "next/link";
 import { AuthCardSeparator } from "../components/auth-card-separator";
 import { SocialSignOnButtons } from "../components/social-sign-on-buttons";
+import { LoaderIcon } from "lucide-react";
+import { useState } from "react";
+import { authClient } from "@/lib/auth-client";
+import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 
 export function SignUpView() {
+    const [ isLoading, setIsLoading ] = useState<boolean>(false);
+    const router = useRouter();
+
     const form = useForm<SignUpDto>({
         resolver: zodResolver(signUpDto),
         defaultValues: {
@@ -21,8 +29,26 @@ export function SignUpView() {
         }
     });
 
-    const onSubmit = (values: SignUpDto) => {
-
+    const onSubmit = async ({ name, email, password }: SignUpDto) => {
+        await authClient.signUp.email({
+            name,
+            email,
+            password,
+            callbackURL: "/dashboard"
+        }, {
+            onRequest: () => {
+                setIsLoading(true);
+            },
+            onSuccess: () => {
+                router.push("/dashboard")
+                setIsLoading(false);
+            },
+            onError: (err) => {
+                setIsLoading(false);
+                toast.error(err.error.message);
+            },
+            
+        })
     }
 
     return (
@@ -104,8 +130,18 @@ export function SignUpView() {
                         <Button
                             type="submit"
                             className="w-full"
+                            disabled={isLoading}
                         >
-                            Create account
+                            {
+                                isLoading ? (
+                                    <>
+                                        <LoaderIcon className="animate-spin" />
+                                        Signing you up
+                                    </>
+                                ) : (
+                                    <>Sign up</>
+                                )
+                            }                        
                         </Button>
                         <div className="w-full text-center">
                             <span> Already have an account? <Link href="/auth/sign-in" className="hover:text-primary hover:underline">Sign in</Link></span>
