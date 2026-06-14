@@ -16,10 +16,13 @@ import { LoaderIcon } from "lucide-react";
 import { authClient } from "@/lib/auth-client";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
+import { LogoCardHeader } from "../components/logo-card-header";
 
 export function SignInView() {
     const [ isLoading, setIsLoading ] = useState<boolean>(false);
     const router = useRouter();
+    const callbackUrl = "/dashboard/workspace";
 
     const form = useForm<SignInDto>({
         resolver: zodResolver(signInDto),
@@ -33,13 +36,13 @@ export function SignInView() {
         await authClient.signIn.email({
             email,
             password,
-            callbackURL: "/dashboard"
+            callbackURL: callbackUrl
         }, {
             onRequest: () => {
                 setIsLoading(true);
             },
             onSuccess: () => {
-                router.push("/dashboard")
+                router.push(callbackUrl)
                 setIsLoading(false);
             },
             onError: (err) => {
@@ -52,11 +55,9 @@ export function SignInView() {
 
     return (
         <Card className="max-w-105 w-full mx-auto">
-            <CardHeader>
-                <CardTitle>
-                    Welcome back
-                </CardTitle>
-                <CardDescription>Sign in to continue analysing data with world class pipelines</CardDescription>
+            <CardHeader className="space-y-3">
+                <LogoCardHeader />
+                <CardDescription className="text-center">Sign in to continue analysing data with world class pipelines</CardDescription>
             </CardHeader>
             <CardContent>
                 <Separator className="mb-6"/>
