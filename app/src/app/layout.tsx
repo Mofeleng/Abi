@@ -1,21 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, IBM_Plex_Mono, IBM_Plex_Sans, Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "sonner";
+import { Space_Grotesk, Inter } from "next/font/google";
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'});
-
-const ibmPlex = IBM_Plex_Mono({
-  variable: "--font-plex-mono",
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"]
+  variable: "--font-heading",
+  weight: ["500", "600", "700"],
 });
 
-const ibmPlexSans = IBM_Plex_Sans({
-  variable: "--font-plex-sans",
+const inter = Inter({
   subsets: ["latin"],
+  variable: "--font-sans",
+  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -31,7 +30,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("h-full", "antialiased", ibmPlex.variable, ibmPlexSans.variable, "font-sans", inter.variable)}
+      className={`${spaceGrotesk.variable} ${inter.variable} antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <TooltipProvider>

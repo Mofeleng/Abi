@@ -15,10 +15,12 @@ import { useState } from "react";
 import { authClient } from "@/lib/auth-client";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
+import { LogoCardHeader } from "../components/logo-card-header";
 
 export function SignUpView() {
     const [ isLoading, setIsLoading ] = useState<boolean>(false);
     const router = useRouter();
+    const callbackUrl = "/dashboard/workspace";
 
     const form = useForm<SignUpDto>({
         resolver: zodResolver(signUpDto),
@@ -34,13 +36,13 @@ export function SignUpView() {
             name,
             email,
             password,
-            callbackURL: "/dashboard"
+            callbackURL: callbackUrl
         }, {
             onRequest: () => {
                 setIsLoading(true);
             },
             onSuccess: () => {
-                router.push("/dashboard")
+                router.push(callbackUrl)
                 setIsLoading(false);
             },
             onError: (err) => {
@@ -53,11 +55,9 @@ export function SignUpView() {
 
     return (
         <Card className="max-w-105 w-full mx-auto">
-            <CardHeader>
-                <CardTitle>
-                    Welcome to Abi
-                </CardTitle>
-                <CardDescription>Create your account to start automating your business intelligence</CardDescription>
+            <CardHeader className="space-y-3">
+                <LogoCardHeader />
+                <CardDescription className="text-center">Create your account to start automating your business intelligence</CardDescription>
             </CardHeader>
             <CardContent>
                 <Separator className="mb-6"/>
