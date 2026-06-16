@@ -5,6 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "sonner";
 import { Space_Grotesk, Inter } from "next/font/google";
 import { QueryProvider } from "@/components/query-provider";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -32,13 +33,21 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${spaceGrotesk.variable} ${inter.variable} antialiased`}
+      suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">
         <QueryProvider>
-          <TooltipProvider>
-            {children}
-          </TooltipProvider>
-          <Toaster />
+          <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange 
+          >
+            <TooltipProvider>
+              {children}
+            </TooltipProvider>
+            <Toaster />
+          </ThemeProvider>
         </QueryProvider>
       </body>
     </html>
