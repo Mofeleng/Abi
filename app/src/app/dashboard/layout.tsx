@@ -17,7 +17,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <SidebarProvider>
             <RenderSidebar />
             <SidebarInset>
-                <main>
+                <main className="flex h-dvh flex-col overflow-hidden">
                     <DashboardNavbar />
                     <div className="px-4 w-full">
                         <Separator />
