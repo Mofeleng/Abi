@@ -1,16 +1,26 @@
-"use server";
-
 import crypto from "crypto";
 
-const ALGORITHM = process.env.ENCRYPTION_ALGORITH as string;
+const ALGORITHM = "aes-256-gcm";
 
-export function decrypt(encryptedSecret:string, key: string) {
-    const [ivHex, encrypted] = encryptedSecret.split(":");
 
-    const decipher = crypto.createDecipheriv(ALGORITHM, key, Buffer.from(ivHex, "hex"));
+export function decrypt(payload: string, encryptionKey: string): string {
+    const [ivHex, tagHex, encryptedHex] = payload.split(":");
+    const key = Buffer.from(encryptionKey, "hex");
 
-    let decrypted = decipher.update(encrypted, "hex", "utf8");
-    decrypted += decipher.final("utf8");
+    const decipher = crypto.createDecipheriv(
+        ALGORITHM,
+        key,
+        Buffer.from(ivHex, "hex")
+    );
 
-    return decrypted;
+    decipher.setAuthTag(
+        Buffer.from(tagHex, "hex")
+    );
+
+    const decrypted = Buffer.concat([
+        decipher.update(Buffer.from(encryptedHex, "hex")),
+        decipher.final()
+    ]);
+
+    return decrypted.toString("utf8");
 }

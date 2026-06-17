@@ -11,14 +11,15 @@ import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectVa
 import { mapDatabaseToLabel } from "../../helpers/database-provider-mapper";
 import { AcceptedDatabaseProviderDto } from "../../dtos/accepted-db-providers";
 import { Button } from "@/components/ui/button";
+import UseCreateDatabaseSource from "../../hooks/use-create-database-source";
+import { LoaderIcon, PlusIcon } from "lucide-react";
+import { toast } from "sonner";
 
 interface ConfigureDatabaseModalProps {
     open: boolean;
     setOpen: Dispatch<SetStateAction<boolean>>;
     db: AcceptedDatabaseProviderDto
 }
-
-
 
 export function ConfigureDatabaseModal({ open, setOpen, db }:ConfigureDatabaseModalProps) {
     const databases = ["POSTGRES", "MONGO", "MYSQL"];
@@ -32,8 +33,16 @@ export function ConfigureDatabaseModal({ open, setOpen, db }:ConfigureDatabaseMo
         }
     });
 
-    const onSubmit = () => {
+    const { mutateAsync, isPending } = UseCreateDatabaseSource();
 
+    const onSubmit = (values: ConfigureNewDatabaseDto) => {
+        mutateAsync(values, {
+            onSuccess: () => {
+                form.reset();
+                toast.success("Added new data source");
+                setOpen(false);
+            }
+        });
     }
 
     return (
@@ -108,10 +117,11 @@ export function ConfigureDatabaseModal({ open, setOpen, db }:ConfigureDatabaseMo
                                     <FieldLabel htmlFor="db-connection-string">
                                         Connection string
                                     </FieldLabel>
-                                    <Textarea
+                                   <Textarea
                                         { ...field }
                                         id="db-connection-string"
                                         aria-invalid={fieldState.invalid}
+                                        className="w-full break-all whitespace-pre-wrap resize-none"
                                     ></Textarea>
                                     { fieldState.invalid && (
                                         <FieldError errors={[fieldState.error]} />
@@ -122,8 +132,22 @@ export function ConfigureDatabaseModal({ open, setOpen, db }:ConfigureDatabaseMo
 
                         <Button type="submit"
                             className="w-full"
+                            disabled={isPending}
                         >
-                            Add data source
+                              {
+                                isPending ? (
+                                    <>
+                                        <LoaderIcon className="animate-spin" />
+                                        Adding data source...
+                                    </>
+                                ) : (
+                                    <>
+                                        <PlusIcon />
+                                        Add data source
+                                    </>
+                                )
+                            }
+                             
                         </Button>
                     </form>
                 </div>
