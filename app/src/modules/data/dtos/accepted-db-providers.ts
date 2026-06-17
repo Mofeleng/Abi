@@ -1,1 +1,1 @@
-export type AcceptedDatabaseProviderDto = "POSTGRES" | "MONGO" | "MYSQL";
+export type AcceptedDatabaseProviderDto = "POSTGRES" | "MONGO" | "MYSQL" | "FILE";

@@ -27,11 +27,11 @@ const groupTwo = [
         label: "Data sources",
         link: "/dashboard/data"
     },
-    {
+    /*{
         icon: BlocksIcon,
         label: "Intergrations",
         link: "/dashboard/intergrations"
-    }
+    }*/
 ]
 
 export function DashboardSidebar() {
