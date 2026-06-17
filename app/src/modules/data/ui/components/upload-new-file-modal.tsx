@@ -12,6 +12,7 @@ import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectVa
 import { mapFileExtensionToLabel } from "../../helpers/file-type-mapper";
 import { AcceptedFileExtensionsDto } from "../../dtos/accepted-file-extensions";
 import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
 
 interface UploadNewFileModalProps {
     open: boolean;
@@ -84,7 +85,7 @@ export function UploadNewFileModal({ open, setOpen }:UploadNewFileModalProps) {
                                     <FieldLabel htmlFor="file-type">
                                         File type
                                     </FieldLabel>
-                                    <Select {...field}>
+                                    <Select value={field.value} onValueChange={field.onChange}>
                                         <SelectTrigger className="w-full">
                                             <SelectValue placeholder="File extension" />
                                         </SelectTrigger>
@@ -120,6 +121,13 @@ export function UploadNewFileModal({ open, setOpen }:UploadNewFileModalProps) {
                                 </aside>
                             </div>
                         </div>
+
+                        <Button
+                            type="submit"
+                            className="w-full"
+                        >
+                            Upload file
+                        </Button>
                     </form>
                     
                 </div>

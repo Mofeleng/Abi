@@ -18,6 +18,13 @@ enum FileType {
   PDF
 }
 
+enum DataSourceType {
+  FILE
+  POSTGRES
+  MONGO
+  MYSQL
+}
+
 model User {
   id            String    @id
   name          String
@@ -27,6 +34,7 @@ model User {
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
   folders       Folder[]
+  dataSources   DataSource[]
   sessions      Session[]
   accounts      Account[]
 
@@ -86,8 +94,11 @@ model Folder {
   id        String    @id   @default(uuid())
   name      String
   userId    String
-  user      User      @relation(references: [id], fields: [userId])
+  user      User      @relation(references: [id], fields: [userId], onDelete: Cascade)
   files     ReportFile[]
+
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
 }
 
 model ReportFile {
@@ -99,4 +110,21 @@ model ReportFile {
 
   folderId  String
   folder    Folder    @relation(fields: [folderId], references: [id], onDelete: Cascade)
+
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+}
+
+model DataSource {
+  id       String     @id   @default(uuid())
+  name     String
+  type     DataSourceType
+  url      String?
+  encryptedConnectionString String?
+  encryptedKey String?
+  userId    String
+  user      User    @relation(references: [id], fields: [userId], onDelete: Cascade)
+
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
 }
