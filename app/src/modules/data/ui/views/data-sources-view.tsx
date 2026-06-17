@@ -1,43 +1,12 @@
 "use client";
 
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { FileIcon, PlusIcon } from "lucide-react";
-import Image from "next/image";
+import { FileIcon } from "lucide-react";
 import { useState } from "react";
-import { SiMongodb, SiMysql, SiPostgresql } from "react-icons/si"
 import { UploadNewFileModal } from "../components/upload-new-file-modal";
 import { ConfigureDatabaseModal } from "../components/configure-db-modal";
 import { AcceptedDatabaseProviderDto } from "../../dtos/accepted-db-providers";
-import { IconType } from "react-icons/lib";
-
-interface DatabasesOptionsDto {
-    id: AcceptedDatabaseProviderDto;
-    label: string;
-    icon: IconType;
-    fill: string;
-}
-const databases:DatabasesOptionsDto[] = [
-    {
-        id: "POSTGRES",
-        label: "PostgreSQL",
-        icon: SiPostgresql,
-        fill: "#336791"
-    },
-    {
-        id: "MONGO",
-        label: "MongoDB",
-        icon: SiMongodb,
-        fill: "#3FA037"
-    },
-    {
-        id: "MYSQL",
-        label: "MySQL",
-        icon: SiMysql,
-        fill: "#00758f"
-    }
-]
+import { databases } from "../../constants/data-sources-options";
 
 export function DataSourcesView() {
 
