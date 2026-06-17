@@ -3,11 +3,13 @@
 import { Separator } from "@/components/ui/separator";
 import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "@/components/ui/sidebar";
 import { cn } from "@/lib/utils";
-import { BlocksIcon, BriefcaseBusinessIcon, DatabaseIcon, GitGraphIcon } from "lucide-react";
+import { BlocksIcon, BriefcaseBusinessIcon, DatabaseIcon, GitGraphIcon, LoaderIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { DashboardUserButton } from "./dashboard-user-button";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 
 const groupOne = [
@@ -33,17 +35,34 @@ const groupTwo = [
 ]
 
 export function DashboardSidebar() {
+    const [ logoSrc, setLogoSrc ] = useState<string|null>(null);
     const pathname = usePathname();
+    const { resolvedTheme } = useTheme();
+
+
+    useEffect(() => {
+        if (resolvedTheme) {
+            setLogoSrc(resolvedTheme === "dark" ? "/logo-dark.svg" : "/logo-base.svg");
+        } else {
+            setLogoSrc("/logo-base.svg")
+        }
+    }, [resolvedTheme]);
+
 
     return (
         <Sidebar variant="inset">
             <SidebarHeader className="h-16 flex-row items-center">
-                <Image
-                    src="/logo-base.svg"
-                    alt="Logo"
-                    width={80}
-                    height={60}
-                />
+                { logoSrc ? (
+                     <Image
+                        src={logoSrc}
+                        alt="Logo"
+                        width={80}
+                        height={60}
+                    />
+                ): (
+                    <LoaderIcon className="animate-spin" />
+                )}  {/* TODO: Use skeleton */}
+               
             </SidebarHeader>
             <Separator />
             <SidebarContent>

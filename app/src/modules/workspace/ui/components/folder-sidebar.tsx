@@ -30,7 +30,7 @@ export function FolderSidebar() {
         <Sidebar variant="inset">
             <SidebarHeader className="h-16 flex-row items-center">
                 <Image
-                    src="/logo-base.svg"
+                    src="/logo-dark.svg"
                     alt="Logo"
                     width={80}
                     height={60}
