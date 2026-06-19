@@ -9,6 +9,9 @@ client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 def run(data_package: dict) -> dict:
     print("\n[Abi Convert] Analysing data and generating structured slide metrics with charting contracts...")
     
+    if "error" in data_package:
+        return data_package
+
     system_prompt = """You are Abi Convert, an elite executive business analyst.
 Your job is to analyze the raw input data package and transform it into a highly detailed presentation layout tailored strictly to the user's explicit request.
 
@@ -19,14 +22,14 @@ CRITICAL PRESENTATION STRUCTURE:
 
 CRITICAL FINANCIAL & DATA RULES:
 1. All monetary values must be calculated and displayed strictly in South African Rands using the prefix 'R' (e.g., R105,303.53). Treat the raw transactional column numbers directly as Rands as requested by the user. Do not use dollar signs ($).
-2. STRCITLY USE THE REAL DATA: Look at the actual 'City' names (such as Yangon, Naypyitaw, Mandalay) and 'Product line' categories present in the data package. NEVER invent regions like 'Gauteng', 'Western Cape', or items like 'Software License'. If the passed data package contains those words, ignore them and fall back strictly to the underlying spreadsheet matrices.
+2. STRICTLY USE THE REAL DATA: Dynamically inspect the categories, cities, regions, and product lines present in the incoming data package. Extract the actual metrics and names directly from the passed dataset. Do not use hardcoded or invented categories.
 
 Expected JSON Structure:
 {
   "title": "A highly precise title addressing the user prompt",
   "key_insights": [
-    "Granular trend observation 1 showing exact revenue metrics in Rands using the real cities/products from the data",
-    "Granular trend observation 2 formatted in Rands using real categories"
+    "Granular trend observation 1 showing exact revenue metrics in Rands using the actual categories from the data",
+    "Granular trend observation 2 formatted in Rands using actual categories"
   ],
   "slides": [
     {
@@ -49,8 +52,8 @@ Expected JSON Structure:
         "type": "chart",
         "chart_type": "bar",
         "title": "Visual Graph Title (Values in Rands)",
-        "labels": ["Yangon", "Naypyitaw", "Mandalay"],
-        "values": [101143, 105303, 101140]
+        "labels": ["Dynamic Label A", "Dynamic Label B"],
+        "values": [12345.67, 89012.34]
       }
     }
   ]
@@ -61,23 +64,21 @@ CRITICAL RULES:
 2. Return ONLY valid, parseable JSON code.
 """
 
-    response = client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
-        messages=[
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": f"Analyze this data package and build a presentation answering this request:\n{json.dumps(data_package, indent=2)}"}
-        ],
-        temperature=0.1
-    )
-
-    raw = response.choices[0].message.content.strip()
-    if raw.startswith("```"):
-        raw = raw.replace("```json", "").replace("```", "").strip()
-        
     try:
+        response = client.chat.completions.create(
+            model="llama-3.3-70b-versatile",
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": f"Analyze this data package and build a presentation answering this request:\n{json.dumps(data_package, indent=2)}"}
+            ],
+            temperature=0.1,
+            response_format={"type": "json_object"}  # Forces Groq to guarantee a clean JSON response
+        )
+
+        raw = response.choices[0].message.content.strip()
         slide_outline = json.loads(raw)
         print(f"[Abi Convert] Done. Successfully mapped out {len(slide_outline['slides'])} descriptive slides with full data visualization schemas.")
         return slide_outline
     except Exception as e:
-        print(f"[Abi Convert] JSON Parse critical failure. Raw output was: {raw}")
+        print(f"[Abi Convert] JSON Parse critical failure. Raw output was: {raw if 'raw' in locals() else 'No Response'}")
         raise e

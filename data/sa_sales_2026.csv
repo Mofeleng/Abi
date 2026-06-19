@@ -1,0 +1,301 @@
+Date,Branch,City,Customer type,Gender,Product line,Unit price,Quantity,Rating
+2026-02-05,C,Cape Town,Member,Male,Clothing,149.91,14,4.4
+2026-02-11,A,Durban,Member,Male,Sports and Outdoor,726.03,15,4.0
+2026-03-30,B,Pretoria,Member,Female,Clothing,660.2,10,4.6
+2026-02-14,B,Durban,Member,Male,Electronics,137.13,3,4.9
+2026-03-27,C,Johannesburg,Member,Male,Electronics,77.31,12,3.5
+2026-02-19,C,Port Elizabeth,Normal,Male,Electronics,236.08,2,4.3
+2026-02-03,A,Johannesburg,Normal,Female,Groceries,410.32,13,3.8
+2026-02-11,A,Durban,Normal,Female,Electronics,550.51,6,4.5
+2026-02-16,A,Johannesburg,Member,Male,Sports and Outdoor,475.11,12,4.7
+2026-01-22,C,Johannesburg,Normal,Male,Home & Garden,224.18,7,4.5
+2026-03-09,B,Port Elizabeth,Normal,Female,Clothing,412.52,5,4.1
+2026-03-21,A,Port Elizabeth,Normal,Male,Groceries,460.59,6,5.0
+2026-02-14,A,Durban,Normal,Female,Health and Beauty,460.23,6,4.5
+2026-02-02,C,Johannesburg,Normal,Male,Clothing,540.48,15,3.6
+2026-03-26,B,Port Elizabeth,Member,Male,Groceries,777.48,7,3.2
+2026-03-31,C,Durban,Member,Male,Electronics,306.18,10,4.3
+2026-01-07,A,Port Elizabeth,Member,Male,Health and Beauty,293.46,12,4.1
+2026-01-02,C,Pretoria,Member,Female,Health and Beauty,265.75,10,4.8
+2026-03-28,C,Pretoria,Normal,Female,Electronics,616.4,9,3.3
+2026-01-11,C,Durban,Member,Female,Health and Beauty,651.45,3,4.1
+2026-02-17,B,Cape Town,Normal,Female,Electronics,80.73,10,3.2
+2026-03-21,B,Cape Town,Normal,Male,Clothing,789.96,6,4.1
+2026-03-22,A,Johannesburg,Normal,Male,Sports and Outdoor,203.87,6,3.7
+2026-01-29,B,Cape Town,Normal,Male,Electronics,424.41,1,4.1
+2026-03-29,B,Johannesburg,Normal,Female,Home & Garden,562.89,2,4.3
+2026-02-03,A,Cape Town,Normal,Male,Groceries,535.13,6,4.8
+2026-01-31,A,Cape Town,Normal,Male,Electronics,592.07,12,3.7
+2026-01-22,B,Port Elizabeth,Member,Female,Groceries,770.33,14,4.6
+2026-02-06,B,Pretoria,Member,Female,Health and Beauty,304.65,8,4.8
+2026-02-06,C,Cape Town,Normal,Female,Groceries,80.51,12,3.2
+2026-01-11,A,Pretoria,Member,Male,Electronics,464.67,2,3.2
+2026-01-15,C,Port Elizabeth,Normal,Male,Electronics,392.14,5,4.5
+2026-01-21,B,Johannesburg,Normal,Female,Health and Beauty,777.01,7,3.0
+2026-02-27,C,Johannesburg,Member,Male,Sports and Outdoor,752.16,11,4.3
+2026-02-18,B,Johannesburg,Member,Female,Clothing,53.84,5,3.0
+2026-01-29,B,Cape Town,Member,Female,Sports and Outdoor,402.47,15,4.7
+2026-02-07,B,Pretoria,Normal,Female,Sports and Outdoor,205.34,7,4.6
+2026-01-21,B,Durban,Normal,Female,Health and Beauty,488.82,1,4.9
+2026-03-23,C,Durban,Member,Male,Health and Beauty,791.67,3,4.1
+2026-02-23,A,Cape Town,Normal,Male,Clothing,427.96,9,4.8
+2026-01-30,C,Port Elizabeth,Normal,Female,Clothing,237.33,6,3.5
+2026-03-21,B,Pretoria,Member,Male,Electronics,181.1,11,4.4
+2026-02-28,B,Cape Town,Member,Male,Clothing,354.55,8,4.3
+2026-01-29,A,Pretoria,Normal,Male,Clothing,87.22,13,3.7
+2026-03-13,C,Durban,Normal,Female,Sports and Outdoor,254.84,15,4.4
+2026-01-07,B,Pretoria,Normal,Female,Clothing,76.73,4,4.9
+2026-02-12,A,Cape Town,Member,Female,Groceries,584.87,10,3.3
+2026-01-23,B,Cape Town,Member,Male,Groceries,87.46,10,4.4
+2026-02-20,B,Cape Town,Normal,Female,Clothing,327.0,7,3.6
+2026-01-07,B,Durban,Member,Female,Electronics,524.57,13,3.6
+2026-03-12,B,Cape Town,Normal,Male,Home & Garden,205.28,6,3.3
+2026-03-14,B,Port Elizabeth,Member,Female,Clothing,107.24,11,3.6
+2026-02-24,B,Cape Town,Normal,Female,Groceries,333.52,8,4.0
+2026-03-10,A,Cape Town,Member,Female,Sports and Outdoor,127.3,3,3.8
+2026-03-05,B,Port Elizabeth,Member,Female,Sports and Outdoor,545.8,7,3.8
+2026-02-13,C,Pretoria,Member,Female,Electronics,113.31,5,4.7
+2026-01-09,A,Pretoria,Normal,Male,Home & Garden,508.92,9,4.5
+2026-01-23,B,Cape Town,Normal,Female,Sports and Outdoor,665.76,7,4.5
+2026-03-10,A,Port Elizabeth,Member,Male,Home & Garden,658.45,6,3.2
+2026-02-05,B,Johannesburg,Member,Male,Groceries,64.02,13,3.3
+2026-01-30,B,Cape Town,Normal,Female,Electronics,288.65,6,4.5
+2026-01-13,A,Cape Town,Member,Male,Health and Beauty,400.48,13,3.1
+2026-02-16,A,Cape Town,Normal,Male,Electronics,481.31,7,4.8
+2026-03-30,B,Johannesburg,Member,Male,Sports and Outdoor,70.63,11,4.5
+2026-01-30,C,Johannesburg,Member,Male,Clothing,231.83,14,4.3
+2026-02-11,A,Pretoria,Normal,Male,Home & Garden,669.66,2,3.8
+2026-02-03,C,Pretoria,Normal,Female,Clothing,450.19,3,3.7
+2026-02-12,C,Cape Town,Member,Male,Groceries,543.7,9,3.2
+2026-03-01,C,Durban,Member,Male,Home & Garden,712.63,2,3.7
+2026-02-11,B,Pretoria,Member,Male,Clothing,535.35,8,3.4
+2026-02-27,C,Durban,Normal,Female,Electronics,130.18,15,3.4
+2026-02-12,A,Cape Town,Normal,Female,Health and Beauty,579.18,2,3.7
+2026-03-07,A,Johannesburg,Normal,Female,Electronics,51.33,6,3.8
+2026-03-26,C,Johannesburg,Normal,Male,Electronics,229.75,6,4.9
+2026-03-31,A,Cape Town,Member,Male,Groceries,445.71,11,4.5
+2026-01-30,B,Cape Town,Member,Male,Clothing,637.3,5,3.2
+2026-03-17,B,Durban,Member,Male,Groceries,683.72,1,3.8
+2026-03-26,C,Cape Town,Normal,Female,Electronics,479.94,2,3.9
+2026-02-23,A,Pretoria,Member,Male,Home & Garden,583.32,14,4.5
+2026-02-16,C,Johannesburg,Member,Female,Groceries,620.21,9,3.9
+2026-02-09,A,Durban,Normal,Female,Home & Garden,749.75,2,3.6
+2026-02-14,B,Durban,Member,Female,Electronics,190.6,2,4.1
+2026-02-28,C,Pretoria,Member,Male,Health and Beauty,394.35,5,4.2
+2026-03-25,B,Johannesburg,Member,Male,Sports and Outdoor,491.26,13,3.0
+2026-02-11,C,Port Elizabeth,Normal,Female,Clothing,157.52,11,4.6
+2026-01-03,B,Durban,Member,Male,Sports and Outdoor,656.17,15,4.6
+2026-01-20,B,Pretoria,Member,Female,Clothing,773.84,14,4.6
+2026-02-25,A,Cape Town,Member,Female,Home & Garden,642.87,1,4.1
+2026-01-07,A,Pretoria,Member,Female,Groceries,345.53,13,4.5
+2026-01-01,B,Pretoria,Normal,Male,Health and Beauty,321.6,12,3.9
+2026-03-17,A,Durban,Member,Male,Health and Beauty,358.26,14,3.9
+2026-01-12,A,Johannesburg,Member,Female,Sports and Outdoor,304.93,14,4.9
+2026-02-01,C,Port Elizabeth,Member,Female,Electronics,530.42,10,3.9
+2026-02-12,A,Pretoria,Normal,Male,Clothing,346.37,13,4.8
+2026-03-23,C,Cape Town,Normal,Female,Clothing,340.78,7,3.8
+2026-03-02,A,Durban,Member,Male,Home & Garden,401.66,5,3.2
+2026-03-09,C,Johannesburg,Member,Female,Groceries,486.17,12,3.9
+2026-02-04,A,Cape Town,Member,Male,Health and Beauty,446.13,11,3.4
+2026-01-16,C,Durban,Normal,Female,Home & Garden,110.46,15,3.8
+2026-01-02,C,Port Elizabeth,Member,Female,Clothing,100.38,13,3.1
+2026-02-25,B,Cape Town,Member,Female,Groceries,198.77,9,4.7
+2026-02-14,B,Cape Town,Member,Female,Electronics,408.41,12,4.7
+2026-02-01,B,Pretoria,Member,Male,Sports and Outdoor,337.82,2,3.2
+2026-03-10,A,Cape Town,Member,Male,Sports and Outdoor,500.37,15,4.4
+2026-01-28,B,Port Elizabeth,Normal,Female,Home & Garden,707.35,9,3.4
+2026-01-07,B,Port Elizabeth,Normal,Male,Health and Beauty,676.21,3,3.8
+2026-03-01,C,Port Elizabeth,Normal,Female,Clothing,731.62,7,4.5
+2026-01-25,C,Cape Town,Normal,Male,Clothing,747.26,14,3.4
+2026-01-24,B,Durban,Normal,Female,Home & Garden,172.1,3,3.5
+2026-03-16,B,Cape Town,Member,Male,Home & Garden,748.6,3,4.5
+2026-03-02,C,Port Elizabeth,Normal,Female,Clothing,197.68,15,4.8
+2026-03-29,C,Cape Town,Member,Female,Home & Garden,70.91,9,4.8
+2026-01-30,A,Port Elizabeth,Member,Female,Electronics,441.75,9,3.0
+2026-03-05,A,Port Elizabeth,Normal,Female,Groceries,527.1,1,4.9
+2026-01-18,C,Durban,Member,Male,Home & Garden,129.79,15,3.6
+2026-01-26,B,Pretoria,Normal,Female,Health and Beauty,430.01,15,3.6
+2026-01-16,C,Durban,Member,Female,Groceries,196.83,7,3.9
+2026-03-23,B,Cape Town,Normal,Male,Home & Garden,214.61,13,4.6
+2026-03-20,A,Cape Town,Member,Female,Home & Garden,773.51,13,3.4
+2026-01-30,B,Cape Town,Normal,Female,Health and Beauty,598.32,4,3.3
+2026-02-11,C,Cape Town,Normal,Female,Health and Beauty,434.84,15,4.2
+2026-01-20,C,Cape Town,Normal,Male,Sports and Outdoor,442.1,14,4.5
+2026-03-31,B,Cape Town,Member,Male,Clothing,55.06,2,3.5
+2026-02-16,A,Johannesburg,Normal,Female,Health and Beauty,254.14,10,4.4
+2026-02-26,A,Johannesburg,Normal,Male,Health and Beauty,290.07,15,4.6
+2026-02-03,A,Port Elizabeth,Normal,Female,Home & Garden,608.88,5,3.1
+2026-02-11,A,Cape Town,Normal,Female,Home & Garden,464.38,13,3.6
+2026-03-06,A,Port Elizabeth,Normal,Female,Groceries,398.07,12,3.1
+2026-02-25,C,Port Elizabeth,Member,Male,Electronics,504.24,6,4.9
+2026-02-03,C,Pretoria,Member,Female,Home & Garden,286.47,11,3.2
+2026-01-03,C,Cape Town,Normal,Male,Electronics,715.41,6,3.4
+2026-03-23,C,Johannesburg,Member,Male,Groceries,266.28,13,3.4
+2026-01-09,A,Durban,Normal,Male,Sports and Outdoor,110.16,5,3.7
+2026-02-18,C,Durban,Normal,Male,Sports and Outdoor,777.99,13,3.6
+2026-01-17,B,Johannesburg,Member,Female,Electronics,514.41,14,3.1
+2026-03-29,A,Cape Town,Member,Female,Home & Garden,545.48,8,3.2
+2026-02-24,B,Johannesburg,Member,Male,Clothing,166.17,14,3.6
+2026-03-24,A,Port Elizabeth,Normal,Male,Home & Garden,628.27,6,4.4
+2026-01-30,C,Durban,Normal,Female,Groceries,276.25,13,3.8
+2026-02-23,B,Port Elizabeth,Normal,Male,Sports and Outdoor,645.48,14,4.6
+2026-02-26,C,Port Elizabeth,Member,Female,Clothing,516.83,3,3.5
+2026-02-26,B,Durban,Normal,Male,Home & Garden,471.91,12,3.2
+2026-02-10,A,Durban,Member,Female,Health and Beauty,736.79,9,4.1
+2026-03-22,B,Durban,Member,Female,Groceries,359.69,5,3.5
+2026-01-24,B,Port Elizabeth,Normal,Female,Home & Garden,767.19,15,4.2
+2026-02-12,A,Johannesburg,Normal,Female,Electronics,429.55,12,4.0
+2026-02-11,B,Cape Town,Normal,Male,Sports and Outdoor,769.63,11,4.2
+2026-01-15,B,Durban,Normal,Male,Sports and Outdoor,298.06,6,3.9
+2026-01-22,A,Port Elizabeth,Member,Male,Electronics,763.24,3,4.2
+2026-02-03,B,Durban,Member,Female,Sports and Outdoor,557.14,6,3.8
+2026-01-19,C,Pretoria,Member,Female,Health and Beauty,323.02,9,3.6
+2026-02-20,B,Cape Town,Member,Female,Electronics,602.12,1,4.5
+2026-02-07,A,Cape Town,Normal,Male,Sports and Outdoor,653.5,4,3.8
+2026-01-28,A,Pretoria,Member,Female,Health and Beauty,798.56,9,3.3
+2026-03-28,A,Port Elizabeth,Normal,Male,Electronics,698.05,7,3.0
+2026-01-13,C,Johannesburg,Normal,Female,Electronics,680.93,11,4.8
+2026-03-07,A,Port Elizabeth,Normal,Female,Clothing,569.34,2,3.3
+2026-02-19,C,Port Elizabeth,Normal,Male,Health and Beauty,776.68,8,4.3
+2026-02-13,B,Port Elizabeth,Member,Male,Clothing,730.69,11,4.4
+2026-02-17,A,Durban,Member,Male,Home & Garden,682.91,6,3.4
+2026-01-27,A,Durban,Normal,Female,Sports and Outdoor,527.17,5,3.7
+2026-01-13,A,Pretoria,Member,Female,Electronics,292.54,7,3.0
+2026-02-11,C,Port Elizabeth,Member,Female,Clothing,370.95,13,3.6
+2026-01-19,A,Cape Town,Member,Male,Sports and Outdoor,72.4,3,4.2
+2026-01-02,A,Pretoria,Normal,Female,Groceries,218.15,7,3.1
+2026-03-29,B,Pretoria,Normal,Male,Sports and Outdoor,277.64,15,4.8
+2026-03-25,C,Durban,Member,Female,Groceries,669.75,3,3.5
+2026-01-17,A,Port Elizabeth,Normal,Female,Clothing,314.53,14,3.5
+2026-01-27,B,Cape Town,Normal,Male,Home & Garden,363.7,12,3.5
+2026-03-13,C,Pretoria,Normal,Male,Health and Beauty,295.91,11,3.5
+2026-03-19,B,Durban,Member,Female,Home & Garden,350.63,4,4.0
+2026-01-10,C,Johannesburg,Member,Female,Groceries,475.58,5,3.8
+2026-01-14,B,Johannesburg,Member,Female,Clothing,74.21,2,4.5
+2026-02-19,C,Port Elizabeth,Normal,Female,Clothing,766.0,10,4.7
+2026-02-20,C,Cape Town,Normal,Male,Clothing,126.83,1,4.5
+2026-01-29,A,Johannesburg,Member,Female,Health and Beauty,153.88,8,3.6
+2026-01-23,C,Port Elizabeth,Normal,Male,Clothing,289.65,4,3.5
+2026-03-22,B,Pretoria,Member,Male,Sports and Outdoor,692.39,1,4.4
+2026-03-08,B,Johannesburg,Normal,Male,Clothing,251.15,6,4.3
+2026-03-01,C,Durban,Member,Male,Clothing,640.03,14,3.1
+2026-01-18,C,Johannesburg,Normal,Male,Home & Garden,194.1,10,4.7
+2026-01-09,A,Durban,Member,Male,Groceries,563.54,6,4.6
+2026-02-27,C,Port Elizabeth,Member,Male,Electronics,214.93,4,4.5
+2026-02-19,C,Pretoria,Member,Male,Sports and Outdoor,99.15,2,4.5
+2026-02-11,A,Durban,Normal,Male,Groceries,54.71,9,4.9
+2026-01-02,B,Johannesburg,Member,Female,Electronics,784.95,15,4.3
+2026-01-15,C,Durban,Normal,Male,Health and Beauty,525.18,9,3.2
+2026-02-09,C,Cape Town,Member,Male,Health and Beauty,484.06,12,4.2
+2026-01-24,B,Cape Town,Normal,Female,Clothing,306.52,14,3.5
+2026-02-18,C,Cape Town,Member,Male,Health and Beauty,406.38,5,4.6
+2026-03-13,C,Durban,Member,Female,Health and Beauty,546.43,6,4.1
+2026-03-28,A,Pretoria,Member,Male,Groceries,589.28,7,3.4
+2026-02-27,B,Cape Town,Normal,Female,Sports and Outdoor,179.59,12,3.2
+2026-03-20,C,Durban,Normal,Male,Clothing,81.32,12,4.1
+2026-03-31,A,Pretoria,Normal,Female,Sports and Outdoor,60.25,15,4.4
+2026-02-11,C,Johannesburg,Normal,Male,Clothing,420.86,13,3.3
+2026-01-24,C,Cape Town,Member,Male,Health and Beauty,105.71,5,3.4
+2026-01-27,C,Pretoria,Normal,Female,Sports and Outdoor,279.92,14,4.1
+2026-01-11,B,Port Elizabeth,Member,Male,Sports and Outdoor,248.28,5,4.5
+2026-01-19,B,Cape Town,Member,Female,Home & Garden,747.14,9,3.0
+2026-02-08,C,Durban,Normal,Male,Home & Garden,379.91,2,4.1
+2026-03-15,B,Durban,Normal,Female,Home & Garden,545.68,4,4.7
+2026-03-07,B,Cape Town,Member,Female,Groceries,546.63,1,4.7
+2026-01-13,A,Johannesburg,Member,Female,Sports and Outdoor,481.66,8,4.8
+2026-02-06,C,Durban,Normal,Male,Health and Beauty,215.97,8,4.0
+2026-01-12,B,Cape Town,Normal,Male,Groceries,237.2,10,4.9
+2026-03-25,C,Durban,Member,Female,Home & Garden,741.49,3,4.5
+2026-01-17,B,Pretoria,Member,Female,Clothing,313.5,10,4.0
+2026-02-09,B,Durban,Normal,Male,Sports and Outdoor,568.22,1,4.8
+2026-01-27,C,Pretoria,Normal,Male,Electronics,531.7,6,3.2
+2026-01-05,C,Johannesburg,Member,Male,Electronics,215.65,6,4.1
+2026-03-02,B,Port Elizabeth,Member,Male,Sports and Outdoor,453.87,1,4.7
+2026-03-14,B,Cape Town,Normal,Male,Sports and Outdoor,479.63,11,3.0
+2026-01-30,B,Port Elizabeth,Member,Male,Clothing,215.59,7,3.9
+2026-03-20,B,Port Elizabeth,Normal,Female,Clothing,305.78,8,4.1
+2026-01-10,B,Cape Town,Normal,Male,Clothing,799.24,3,4.4
+2026-03-16,B,Port Elizabeth,Member,Male,Groceries,564.05,12,3.7
+2026-03-01,B,Cape Town,Member,Female,Groceries,347.67,13,4.1
+2026-02-02,C,Durban,Normal,Female,Home & Garden,143.23,4,4.3
+2026-01-31,C,Johannesburg,Member,Male,Groceries,197.39,13,3.1
+2026-01-17,A,Cape Town,Member,Female,Home & Garden,624.57,1,4.6
+2026-02-16,C,Durban,Normal,Female,Home & Garden,331.73,13,3.3
+2026-03-23,B,Pretoria,Normal,Female,Electronics,427.26,13,4.5
+2026-02-13,B,Pretoria,Normal,Male,Groceries,331.69,15,4.4
+2026-02-20,A,Durban,Member,Male,Health and Beauty,119.13,8,4.6
+2026-01-16,B,Port Elizabeth,Normal,Male,Groceries,102.28,14,4.3
+2026-01-17,C,Johannesburg,Normal,Female,Sports and Outdoor,699.52,12,4.2
+2026-01-08,C,Johannesburg,Member,Male,Clothing,242.37,6,3.4
+2026-03-08,A,Port Elizabeth,Member,Female,Electronics,247.49,8,4.6
+2026-01-03,B,Cape Town,Normal,Male,Sports and Outdoor,206.62,11,3.1
+2026-01-02,A,Johannesburg,Member,Female,Home & Garden,378.98,14,3.7
+2026-01-25,B,Durban,Member,Male,Electronics,516.46,15,3.3
+2026-01-19,C,Port Elizabeth,Normal,Male,Home & Garden,384.09,5,4.1
+2026-03-10,C,Pretoria,Member,Male,Electronics,260.11,12,4.0
+2026-02-04,B,Durban,Member,Male,Home & Garden,225.9,15,4.1
+2026-03-23,B,Pretoria,Member,Male,Home & Garden,562.99,13,3.7
+2026-01-12,B,Durban,Normal,Female,Health and Beauty,529.03,3,4.0
+2026-02-07,C,Pretoria,Member,Male,Electronics,426.58,10,4.5
+2026-03-08,C,Cape Town,Member,Male,Clothing,212.77,11,4.9
+2026-02-20,C,Durban,Normal,Female,Health and Beauty,457.97,1,3.3
+2026-02-14,A,Durban,Member,Male,Health and Beauty,342.71,15,4.2
+2026-02-10,C,Cape Town,Member,Female,Health and Beauty,330.67,11,4.3
+2026-01-08,B,Johannesburg,Normal,Female,Electronics,84.99,9,5.0
+2026-03-31,A,Pretoria,Normal,Female,Health and Beauty,190.91,14,4.9
+2026-02-07,B,Johannesburg,Member,Male,Groceries,66.11,4,4.7
+2026-02-15,B,Pretoria,Normal,Female,Sports and Outdoor,331.36,3,4.2
+2026-01-30,B,Pretoria,Normal,Male,Electronics,152.39,3,3.9
+2026-03-05,A,Port Elizabeth,Normal,Male,Groceries,202.61,11,3.8
+2026-01-14,B,Cape Town,Normal,Male,Home & Garden,86.7,5,4.4
+2026-03-26,C,Johannesburg,Member,Female,Health and Beauty,434.75,1,3.3
+2026-03-21,B,Pretoria,Member,Female,Groceries,280.21,3,4.8
+2026-02-27,C,Durban,Member,Female,Health and Beauty,480.93,2,3.3
+2026-01-13,B,Durban,Member,Female,Clothing,617.21,4,4.5
+2026-03-26,B,Cape Town,Normal,Female,Electronics,289.81,14,3.5
+2026-03-04,A,Pretoria,Normal,Female,Home & Garden,234.75,12,3.5
+2026-03-31,A,Cape Town,Member,Male,Electronics,670.54,13,4.8
+2026-01-18,B,Port Elizabeth,Member,Female,Clothing,449.97,13,4.2
+2026-03-17,C,Durban,Normal,Female,Clothing,177.13,4,3.7
+2026-03-07,B,Port Elizabeth,Normal,Male,Electronics,199.47,9,3.1
+2026-02-06,C,Cape Town,Normal,Female,Sports and Outdoor,417.27,5,3.7
+2026-02-23,B,Pretoria,Normal,Male,Clothing,768.89,5,4.4
+2026-01-27,B,Cape Town,Normal,Female,Health and Beauty,636.04,3,3.7
+2026-02-25,C,Cape Town,Member,Female,Home & Garden,722.79,7,5.0
+2026-03-17,A,Port Elizabeth,Member,Male,Groceries,346.5,3,4.9
+2026-01-18,C,Port Elizabeth,Normal,Female,Clothing,114.33,5,4.3
+2026-03-17,A,Durban,Member,Female,Sports and Outdoor,688.97,3,3.3
+2026-01-05,B,Durban,Member,Male,Clothing,89.07,10,3.0
+2026-02-18,B,Cape Town,Member,Male,Clothing,507.89,5,3.4
+2026-01-28,C,Port Elizabeth,Member,Female,Health and Beauty,638.75,1,4.8
+2026-02-18,C,Durban,Member,Female,Groceries,695.67,10,3.4
+2026-01-14,C,Pretoria,Normal,Male,Clothing,459.63,8,4.6
+2026-03-31,C,Johannesburg,Normal,Female,Health and Beauty,720.46,13,4.4
+2026-01-11,A,Durban,Member,Female,Health and Beauty,177.89,6,4.1
+2026-03-01,C,Durban,Normal,Female,Health and Beauty,244.68,5,4.1
+2026-02-27,A,Pretoria,Normal,Male,Home & Garden,745.37,5,4.5
+2026-03-03,C,Johannesburg,Member,Female,Electronics,319.32,12,4.5
+2026-03-03,A,Pretoria,Member,Female,Sports and Outdoor,589.79,1,4.6
+2026-01-23,C,Cape Town,Member,Female,Groceries,474.87,2,3.9
+2026-01-16,A,Cape Town,Normal,Male,Sports and Outdoor,119.3,5,3.6
+2026-02-04,C,Pretoria,Member,Female,Electronics,346.51,14,4.4
+2026-03-17,B,Pretoria,Member,Female,Electronics,487.91,13,3.8
+2026-03-23,B,Port Elizabeth,Member,Male,Sports and Outdoor,202.31,4,4.7
+2026-01-16,C,Port Elizabeth,Member,Female,Clothing,415.12,7,4.0
+2026-03-10,C,Cape Town,Member,Male,Groceries,161.35,14,3.6
+2026-02-07,C,Pretoria,Member,Female,Electronics,756.95,6,3.5
+2026-03-05,C,Pretoria,Normal,Male,Groceries,651.31,5,4.4
+2026-01-20,A,Port Elizabeth,Normal,Male,Home & Garden,205.9,8,4.8
+2026-02-06,C,Port Elizabeth,Normal,Female,Health and Beauty,673.45,15,3.9
+2026-01-12,A,Durban,Member,Male,Health and Beauty,617.19,7,4.8
+2026-03-07,B,Cape Town,Member,Female,Groceries,778.12,9,3.8
+2026-01-13,C,Port Elizabeth,Normal,Female,Home & Garden,181.73,10,3.7
+2026-02-24,C,Port Elizabeth,Member,Male,Home & Garden,522.71,6,4.3
+2026-01-21,A,Durban,Normal,Male,Clothing,599.45,5,4.0
+2026-01-07,C,Johannesburg,Normal,Female,Sports and Outdoor,325.85,10,4.5
+2026-02-14,C,Pretoria,Normal,Male,Home & Garden,165.35,2,3.2
+2026-01-02,B,Pretoria,Member,Female,Sports and Outdoor,378.07,9,3.5
+2026-02-17,A,Port Elizabeth,Member,Male,Electronics,145.09,11,3.4
+2026-01-09,C,Pretoria,Member,Male,Clothing,453.56,9,3.7
+2026-01-13,B,Port Elizabeth,Normal,Female,Clothing,253.46,3,4.4
+2026-02-24,C,Pretoria,Normal,Female,Clothing,665.38,13,3.4
