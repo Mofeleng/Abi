@@ -32,14 +32,15 @@ def _generate_chart_image(visual_meta: dict, output_path: str) -> str:
     plt.yticks(fontsize=9)
     plt.tight_layout()
     
-    sanitized_title = "".join([c for c in title if c.isalnum() or c in (' ', '_')]).rstrip().replace(' ', '_').lower()
+    # Clean file name string transformations with a length guardrail to prevent path limits on Windows
+    sanitized_title = "".join([c for c in title if c.isalnum() or c in (' ', '_')]).rstrip().replace(' ', '_').lower()[:30]
     img_path = output_path.replace(".pptx", f"_{sanitized_title}.png")
     plt.savefig(img_path, dpi=200, transparent=True)
     plt.close()
     return img_path
 
 def run(slide_outline: dict, output_path: str) -> str:
-    print("[Abi Design] Generating a flawless 10/10 executive presentation...")
+    print("[Abi Design] Generating a flawless 10/10 executive presentation Layout...")
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     
     prs = Presentation()
@@ -52,7 +53,6 @@ def run(slide_outline: dict, output_path: str) -> str:
         
         # ─── RENDERING THE COVER PAGE LAYOUT ──────────────────────────
         if slide_data.get("type") == "cover_page":
-            # Giant Centered Header Box
             cover_box = slide.shapes.add_textbox(Inches(1.0), Inches(2.5), Inches(11.333), Inches(3.0))
             tf = cover_box.text_frame
             tf.word_wrap = True
@@ -83,9 +83,14 @@ def run(slide_outline: dict, output_path: str) -> str:
         ctf = content_box.text_frame
         ctf.word_wrap = True
         
-        for bullet in slide_data.get("bullet_points", []):
-            bp = ctf.add_paragraph()
-            bp.text = f"• {bullet}"
+        # Native paragraph assignment completely prevents the double-bullet glitch
+        for index, bullet in enumerate(slide_data.get("bullet_points", [])):
+            if index == 0:
+                bp = ctf.paragraphs[0]
+            else:
+                bp = ctf.add_paragraph()
+            bp.text = bullet
+            bp.level = 0  # Configures standard bullet styling natively
             bp.font.size = Pt(15)
             bp.space_after = Pt(12)
             bp.font.color.rgb = RGBColor(0x33, 0x41, 0x55)

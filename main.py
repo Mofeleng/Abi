@@ -66,7 +66,7 @@ if __name__ == "__main__":
     if not prompt.strip():
         prompt = "Give me a detailed summary of this supermarket sales data and top recommendations."
 
-    csv_path = "data/supermarket_sales_new.csv"
+    csv_path = "data/sa_sales_2026.csv"
     csv_data = load_csv(csv_path)
     
     print("\nInitializing pipeline sequence... User prompt captured successfully.")
