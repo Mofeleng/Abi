@@ -1,11 +1,19 @@
-from typing import TypedDict, Any
+from typing import TypedDict, Any, Annotated
+from langgraph.graph import add_messages
+import enum
+
+class ReportEnum(str, enum.Enum):
+    DOCX = "docx"
+    PPTX = "pptx"
+    PDF = "pdf"
 
 class AbiState(TypedDict):
     """
     The central clipboard for the Abi agent pipeline.
     Tracks data as it moves from classification through SQL analysis to presentation.
     """
-    user_message: str          # The incoming chat message from the user
+    messages: Annotated[list, add_messages]     # The incoming chat message from the user
+    report_type: str
     classification: str        # 'conversation' or 'report'
     data_source_mapped: bool   # Tracks if 'Access & map data source' succeeded
     sql_query_results: Any     # Holds the output from 'Run SQL queries'
