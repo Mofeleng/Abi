@@ -1,25 +1,61 @@
-from state import AbiState
+from .state import AbiState
+from langchain.messages import SystemMessage
+from .llm import llm
 
-# ==========================================
-# 1. THE CONVERSATION PATH (Top branch)
-# ==========================================
+def classifier_node(state: AbiState) -> str:
+    messages = [
+       SystemMessage(
+            content=(
+                "You are an expert intent classifier for a business intelligence system. "
+                "Analyze the user's prompt and reply with EXACTLY one word. "
+                "Return 'chat' if the user wants a simple, direct conversational answer. "
+                "Return 'report' if the user requires a comprehensive analysis or data document. "
+                "Do not include any punctuation, formatting, or extra text."
+            )
+        ),
+       *state["messages"]
+   ]
+    
+    result = llm.invoke(messages)
+    
+    if "chat" in result.content:
+        return "chat"
+    else:
+        return "report"
 
 def conversation_node(state: AbiState):
-    print("\n(->) Conversation Mode: Handling a normal chat message...")
-    # This is where your conversational LLM call will eventually go
-    return {"response": "Hi! I am Abi. I am ready to help you analyze data or just chat."}
+   messages = [
+       SystemMessage("Your name is Abi. You are a helpful data analyst, answer the user's questions"),
+       *state["messages"]
+   ]
 
+   result = llm.invoke(messages)
 
-# ==========================================
-# 2. THE REPORT PIPELINE PATH (Bottom branch sequential steps)
-# ==========================================
+   return { "messages": [result.content] }
 
 def report_mode_node(state: AbiState):
     print("\n(->) Report Mode: Initializing the reporting pipeline...")
-    return {"classification": "report"}
+    messages = [
+       SystemMessage(
+            content=(
+                "You are an expert document requirements classifier for a business intelligence system. "
+                "Analyze the user's prompt and reply with EXACTLY one word. "
+                "Return 'docx', 'pptx', 'pdf' based on what the best report to generate would be "
+                "pptx is great for presentations, docx are great for research and formal findings, and pdf is similar to docx provided the user does not intend to make changes later "
+                "Do not include any punctuation, formatting, or extra text."
+            )
+        ),
+       *state["messages"]
+   ]
+    
+    res = llm.invoke(messages)
+    result = res.content.strip().lower()
+
+    return { "report_type": result }
 
 def access_map_data_node(state: AbiState):
     # This is where you map user questions to database schemas
+    
     return {"data_source_mapped": True}
 
 def run_sql_queries_node(state: AbiState):
