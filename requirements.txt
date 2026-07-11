@@ -1,0 +1,6 @@
+groq
+gTTS
+num2words
+python-dotenv
+moviepy
+comtypes

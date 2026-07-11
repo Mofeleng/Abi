@@ -1,0 +1,14 @@
+PRESENTATION: Supermarket Sales Analysis and Strategic Recommendations
+==================================================
+
+Slide 1 - Supermarket Sales Analysis:
+Welcome to our supermarket sales analysis and strategic recommendations presentation. This presentation provides a comparative analysis of product line performance across Yangon, Naypyitaw, and Mandalay. We will be examining the key insights and trends that will inform our strategic recommendations for improving sales performance.
+
+Slide 2 - City-Wise Revenue Breakdown:
+As we can see from the city-wise revenue breakdown, the total revenue across all cities is R307,587.38. Naypyitaw is the highest-performing city with a revenue of R105,303.53, followed by Yangon with R101,143.21, and Mandalay with R101,140.64. This trend suggests that Mandalay requires strategic expansion in specific inventory segments to improve its revenue performance.
+
+Slide 3 - Product Line Performance:
+Our analysis of product line performance reveals that food and beverages is the highest-performing product line with a revenue of R53,471.28. In contrast, health and beauty is the lowest-performing product line with a revenue of R46,851.18. It is also notable that electronic accessories and fashion accessories have similar revenue figures, with R51,750.03 and R51,719.90 respectively. These trends will inform our strategic recommendations for improving product line performance.
+
+Slide 4 - Strategic Recommendations for Mandalay:
+Based on our analysis, we recommend expanding the food and beverages product line in Mandalay to increase revenue. Additionally, we suggest considering increasing the inventory of electronic accessories and fashion accessories in Mandalay. By analyzing customer demand and preferences in Mandalay, we can identify opportunities for growth and optimize our product line offerings. Our recommended product line expansion in Mandalay includes allocating R20,000 to food and beverages, R15,000 to electronic accessories, and R15,000 to fashion accessories.
