@@ -1,8 +1,9 @@
-# Environments to secure my API ket.
 # Environments
 .env
+.env.txt
 .venv/
 __pycache__/
+*.pyc
 
 # Project outputs
 outputs/

@@ -5,7 +5,7 @@ from state import AbiState
 # ==========================================
 
 def conversation_node(state: AbiState):
-    print("\n Conversation Mode: Handling a normal chat message...")
+    print("\n(->) Conversation Mode: Handling a normal chat message...")
     # This is where your conversational LLM call will eventually go
     return {"response": "Hi! I am Abi. I am ready to help you analyze data or just chat."}
 
