@@ -13,6 +13,19 @@ from .nodes import (
 
 # 1. Initialize Checkpointer
 checkpointer = InMemorySaver()
+# ==========================================
+# 1. THE CLASSIFIER ROUTER
+# ==========================================
+# This acts as the circular "Classifier" block in your diagram.
+# It reads the clipboard state and returns the route string.
+def classifier_routing_logic(state: AbiState) -> str:
+    message = state["user_message"].lower()
+    
+    # Simple rule for testing: if they ask for a report or data, route down
+    if "report" in message or "analytics" in message or "data" in message:
+        return "go_to_report_path"
+    else:
+        return "go_to_conversation_path"
 
 # 2. Build Workflow
 workflow = StateGraph(AbiState)
@@ -46,3 +59,9 @@ workflow.add_edge("create_layout_json", END)
 
 # 4. Compile with checkpointer
 abi_agent = workflow.compile(checkpointer=checkpointer)
+
+# ====================
+# 4. COMPILE THE PIPELINE
+# =====================
+# This converts the blueprint into an active application engine
+abi_agent = workflow.compile()
