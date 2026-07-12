@@ -4,4 +4,8 @@ import os
 
 load_dotenv()
 
-engine = create_async_engine(os.getenv("DATABASE_URL"), echo=True)
+engine = create_async_engine(
+    os.getenv("DATABASE_URL"),
+    echo=True,
+    connect_args={"ssl":True}    
+)
