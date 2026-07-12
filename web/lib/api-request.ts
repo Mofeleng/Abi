@@ -4,10 +4,21 @@ interface APIRequest<TypeofPayload = unknown> {
     headers?: HeadersInit;
     include_credentials?: boolean;
     payload?: TypeofPayload;
+    params?: Record<string, string | number | boolean | undefined>;
 }
 
 export async function apiRequest<T>(req: APIRequest):Promise<T> {
-    const res = await fetch(req.url, {
+    const url = new URL(req.url);
+
+    if (req.params) {
+        Object.entries(req.params).forEach(([key, value]) => {
+            if (value !== undefined) {
+                url.searchParams.append(key, String(value))
+            }
+        })
+    }
+    
+    const res = await fetch(url, {
         method: req.method,
         ...(req.method !== "GET" ? {
             headers: {
