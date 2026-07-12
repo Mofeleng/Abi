@@ -1,1 +1,0 @@
-export type AcceptedFileExtensionsDto = "xls" | "xlsx" | "pdf" | "txt" | "csv";
