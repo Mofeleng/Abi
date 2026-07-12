@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from api.src.routes.session import session_router
 from api.src.routes.conversation import conversations_router
+from api.src.routes.message import messages_router
 
 from api.src.dtos.new_message import NewMessage
 from api.src.dtos.new_session import NewSession
@@ -48,7 +49,9 @@ app.include_router(fast_api_users.get_users_router(UserRead, UserUpdate), prefix
 
 app.include_router(session_router, prefix="/api/session", tags=["session"])
 app.include_router(conversations_router, prefix="/api/conversation", tags=["conversation"])
+app.include_router(messages_router, prefix="/api/message", tags=["message"])
 
+"""
 @app.post("/api/message")
 def message_abi(data: NewMessage):
     res = abi_agent.invoke({
@@ -61,3 +64,4 @@ def message_abi(data: NewMessage):
     })
 
     return res["messages"][-1].content
+"""

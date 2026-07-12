@@ -1,7 +1,6 @@
 import uuid
-from datetime import datetime
 
-from sqlalchemy import DateTime, ForeignKey, UUID
+from sqlalchemy import ForeignKey, UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from packages.database.mixins import Timestamps
@@ -18,28 +17,31 @@ class Conversation(Base, Timestamps):
         default=uuid.uuid4,
     )
 
-    thread_id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), default=uuid.uuid4())
+    thread_id: Mapped[uuid.UUID] = mapped_column(
+        UUID(as_uuid=True),
+        default=uuid.uuid4,
+    )
 
     user_id: Mapped[uuid.UUID] = mapped_column(
         UUID(as_uuid=True),
-        ForeignKey("user.id")
-
+        ForeignKey("user.id"),
+        nullable=False,
     )
 
     user: Mapped["User"] = relationship(
         "User",
-        back_populates="conversations"
+        back_populates="conversations",
     )
-    session_id: Mapped[uuid.UUID] = mapped_column(
+
+    conversation_session_id: Mapped[uuid.UUID] = mapped_column(
         UUID(as_uuid=True),
         ForeignKey("conversation_sessions.id"),
-        unique=True,
         nullable=False,
     )
 
-    session: Mapped["ConversationSession"] = relationship(
+    conversation_session: Mapped["ConversationSession"] = relationship(
         "ConversationSession",
-        back_populates="conversation",
+        back_populates="conversations",
     )
 
     messages: Mapped[list["Message"]] = relationship(
