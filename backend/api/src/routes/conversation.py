@@ -24,7 +24,7 @@ async def create_conversation(data: NewConversation, session: AsyncSession = Dep
     
     conversation = Conversation(
         user_id=uuid.UUID(data.user_id),
-        session_id=uuid.UUID(data.chat_session_id)
+        conversation_session_id=uuid.UUID(data.chat_session_id)
     )
 
     session.add(conversation)

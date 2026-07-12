@@ -34,10 +34,9 @@ class ConversationSession(Base, Timestamps):
         nullable=False,
     )
 
-    conversation: Mapped["Conversation"] = relationship(
+    conversations: Mapped[list["Conversation"]] = relationship(
         "Conversation",
-        back_populates="session",
-        uselist=False,
+        back_populates="conversation_session",
         cascade="all, delete-orphan",
     )
 
