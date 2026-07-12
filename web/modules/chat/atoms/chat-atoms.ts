@@ -11,5 +11,5 @@ export const userIdAtom = atom<string|null>(null);
 export const chatSessionAtomFamily = atomFamily((userId: string) => 
     atomWithStorage<string|null>(`${CHAT_SESSION_KEY}_${userId}`, null)
 )
-
 export const loadingMessageAtom = atom<string|null>(null);
+export const conversationIdAtom = atom<string|null>(null);
