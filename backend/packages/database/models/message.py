@@ -1,32 +1,55 @@
-from sqlalchemy import String, ForeignKey, UUID, DateTime, Enum
+import enum
+import uuid
+
+from sqlalchemy import Enum, ForeignKey, String, UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-import uuid
-import enum
-from datetime import datetime
+from packages.database.enums import MessageParticipantEnum
+from packages.database.mixins import Timestamps
 
 from .base import Base
-from packages.database.mixins import Timestamps
-from packages.database.enums import MessageParticipantEnum
+
 
 class Message(Base, Timestamps):
     __tablename__ = "messages"
 
-    id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True, nullable=False, default=uuid.uuid4())
+    id: Mapped[uuid.UUID] = mapped_column(
+        UUID(as_uuid=True),
+        primary_key=True,
+        default=uuid.uuid4,
+    )
 
-    message_from: Mapped[enum.Enum] = mapped_column(Enum(MessageParticipantEnum), nullable=False, default=MessageParticipantEnum.USER)
-    content: Mapped[str] = mapped_column(String, nullable=False)
+    message_from: Mapped[enum.Enum] = mapped_column(
+        Enum(MessageParticipantEnum),
+        nullable=False,
+        default=MessageParticipantEnum.USER,
+    )
 
-    report_id: Mapped[uuid.UUID] = mapped_column(ForeignKey("reports.id"))
-    report: Mapped["Report"] = relationship(
+    content: Mapped[str] = mapped_column(
+        String,
+        nullable=False,
+    )
+
+    conversation_id: Mapped[uuid.UUID] = mapped_column(
+        UUID(as_uuid=True),
+        ForeignKey("conversations.id"),
+        nullable=False,
+    )
+
+    conversation: Mapped["Conversation"] = relationship(
+        "Conversation",
+        back_populates="messages",
+    )
+
+    report_id: Mapped[uuid.UUID | None] = mapped_column(
+        UUID(as_uuid=True),
+        ForeignKey("reports.id"),
+        unique=True,
+        nullable=True,
+    )
+
+    report: Mapped["Report | None"] = relationship(
         "Report",
         back_populates="message",
-        cascade="all, delete-orphan"
+        uselist=False,
     )
-    
-    conversation_id: Mapped[uuid.UUID] = mapped_column(ForeignKey("conversation_sessions.id"))
-    conversation: Mapped["Conversation"] = relationship(
-        "ConversationSession",
-        back_populates="conversation"
-    )
-    
