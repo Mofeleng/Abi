@@ -26,7 +26,7 @@ async def new_message(data: NewMessage, session: AsyncSession = Depends(get_sess
     )
 
     res = abi_agent.invoke({
-        "messages": HumanMessage(data.message)
+        "messages": [HumanMessage(data.message)],
     }, 
     config={
         "configurable": {

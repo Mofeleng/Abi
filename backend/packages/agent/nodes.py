@@ -1,6 +1,7 @@
 from .state import AbiState
-from langchain.messages import SystemMessage
+from langchain.messages import SystemMessage, ToolMessage
 from .llm import llm
+from .tools import query_spreadsheet
 
 def classifier_node(state: AbiState) -> str:
     messages = [
@@ -24,14 +25,23 @@ def classifier_node(state: AbiState) -> str:
         return "report"
 
 def conversation_node(state: AbiState):
-   messages = [
-       SystemMessage("Your name is Abi. You are a helpful data analyst, answer the user's questions"),
-       *state["messages"]
-   ]
+    llm_with_tools = llm.bind_tools([query_spreadsheet])
 
-   result = llm.invoke(messages)
-
-   return { "messages": [result.content] }
+    system_prompt = SystemMessage(
+        content=(
+            "Your name is Abi. You are a business intelligence assistant. "
+            "You have access to a spreadsheet tool called 'query_spreadsheet' containing supermarket sales data. "
+            "The dataframe is pre-loaded as 'df'. Columns include: 'Invoice ID', 'Branch', 'City', "
+            "'Customer type', 'Gender', 'Product line', 'Unit price', 'Quantity', 'Tax 5%', 'Total', 'Date', 'Time', 'Payment', 'cogs', 'gross margin percentage', 'gross income', 'Rating'. "
+            "If the user asks a data question, write Python code to calculate the answer and use the tool. "
+            "Once you receive the tool output, interpret the results and provide a friendly, well-formatted response to the user."
+        )
+    )
+    messages = [system_prompt] + state["messages"]
+    
+    response = llm_with_tools.invoke(messages)
+    
+    return { "messages": [response] }
 
 def report_mode_node(state: AbiState):
     print("\n(->) Report Mode: Initializing the reporting pipeline...")
@@ -53,30 +63,3 @@ def report_mode_node(state: AbiState):
 
     return { "report_type": result }
 
-def access_map_data_node(state: AbiState):
-    # This is where you map user questions to database schemas
-    
-    return {"data_source_mapped": True}
-
-def run_sql_queries_node(state: AbiState):
-    print("(->) Run SQL Queries: Querying database via SQLAlchemy...")
-    # This is where future SQL connection code will live!
-    return {"sql_query_results": "Raw Rows: [Month='July', Revenue=45000, Growth='12%']"}
-
-def summarize_findings_node(state: AbiState):
-    print("(->) Summarize Findings: Formatting and processing data insights...")
-    # This is where an LLM reads the database results and writes a human summary
-    return {"summary_findings": "Analysis shows July revenue hit $45,000 with a 12% growth spike."}
-
-def create_layout_json_node(state: AbiState):
-    print("(->) Create Layout JSON: Packing findings into final presentation format...")
-    # Creating the final layout JSON structure for your frontend UI
-    final_layout = {
-        "component": "DashboardReport",
-        "title": "Revenue Performance Report",
-        "data": {"metrics": state.get("sql_query_results"), "summary": state.get("summary_findings")}
-    }
-    return {
-        "presentation_json": final_layout,
-        "response": "Your custom report layout has been successfully built!"
-    }

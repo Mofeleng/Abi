@@ -12,6 +12,7 @@ dependencies = [
     "langchain-deepseek>=1.1.0",
     "langchain-fireworks>=1.4.4",
     "langgraph>=1.2.8",
+    "pandas>=3.0.3",
     "psycopg[binary]>=3.3.4",
     "python-dotenv>=1.2.2",
     "sqlalchemy[asyncio]>=2.0.51",
