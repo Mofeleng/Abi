@@ -1,0 +1,10 @@
+fastapi
+langchain
+uvicorn
+python-dotenv
+groq
+gTTS
+num2words
+python-dotenv
+moviepy
+comtypes
