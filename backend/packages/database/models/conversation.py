@@ -18,6 +18,18 @@ class Conversation(Base, Timestamps):
         default=uuid.uuid4,
     )
 
+    thread_id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), default=uuid.uuid4())
+
+    user_id: Mapped[uuid.UUID] = mapped_column(
+        UUID(as_uuid=True),
+        ForeignKey("user.id")
+
+    )
+
+    user: Mapped["User"] = relationship(
+        "User",
+        back_populates="conversations"
+    )
     session_id: Mapped[uuid.UUID] = mapped_column(
         UUID(as_uuid=True),
         ForeignKey("conversation_sessions.id"),
@@ -34,9 +46,4 @@ class Conversation(Base, Timestamps):
         "Message",
         back_populates="conversation",
         cascade="all, delete-orphan",
-    )
-
-    expires_at: Mapped[datetime] = mapped_column(
-        DateTime(timezone=True),
-        nullable=False,
     )

@@ -16,3 +16,9 @@ class User(SQLAlchemyBaseUserTableUUID, Base, Timestamps):
         back_populates="user",
         cascade="all, delete-orphan",
     )
+
+    conversations: Mapped[List["Conversation"]] = relationship(
+        "Conversation",
+        back_populates="user",
+        cascade="all, delete-orphan"
+    )
